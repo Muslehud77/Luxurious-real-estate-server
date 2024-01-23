@@ -11,6 +11,7 @@ const app = express();
 
 // route imports
 import userRouter from "./Routes/User.route.js";
+import authRouter from './Routes/auth.route.js';
 
 
 
@@ -30,7 +31,7 @@ mongoose.connect(process.env.DBuri).then(()=>{
 // actual routes
 app.use('/api/user', userRouter)
 
-
+app.use('/api/auth',authRouter)
 
 
 
