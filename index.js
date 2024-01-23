@@ -1,10 +1,18 @@
+import express from 'express';
+import mongoose  from 'mongoose';
+import cors from 'cors';
+import dotenv from 'dotenv'
+dotenv.config();
 
-const express = require('express')
-const cors = require('cors');
-const { default: mongoose } = require('mongoose');
 const port = process.env.PORT || 5000;
 const app = express();
-require("dotenv").config();
+
+
+
+// route imports
+import userRouter from "./Routes/User.route.js";
+
+
 
 //middlewares
 app.use(cors());
@@ -19,6 +27,8 @@ mongoose.connect(process.env.DBuri).then(()=>{
 
 
 
+// actual routes
+app.use('/api/user', userRouter)
 
 
 
