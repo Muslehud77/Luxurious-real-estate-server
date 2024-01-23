@@ -21,7 +21,7 @@ app.use(express.json());
   async function run() {
     try {
       // Connect the client to the server	(optional starting in v4.7)
-      await client.connect();
+      // await client.connect();...
     
       const taskCollection = client.db("ListEase").collection("TaskCollection");
 
